@@ -31,5 +31,28 @@ namespace Volumes
         {
 
         }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            //set variables 
+            double radius;
+
+            //read radius value
+            try
+            {
+                radius = double.Parse(textBox1.Text);
+            }
+            catch
+            {
+                MessageBox.Show("Error on input");
+                radius = 0.0;
+            }
+
+            //calculate volume 
+            double Volume = 4.0 / 3.0 * Math.PI * radius * radius * radius;
+
+            //display volume 
+            label1.Text = "Volume = " + Volume + "m^3.";
+        }
     }
 }
